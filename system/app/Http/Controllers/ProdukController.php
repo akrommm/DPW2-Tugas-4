@@ -17,7 +17,7 @@ class ProdukController extends Controller{
         $produk->stok = request('stok');
         $produk->harga = request('harga');
         $produk->berat = request('berat');
-        $produk->deskripsi = request('deskkripsi');
+        $produk->deskripsi = request('deskripsi');
         $produk->save();
         
         return redirect('produk')->with('success', 'Data Berhasil Ditambahkan');
