@@ -3,6 +3,7 @@
 
 
 <!-- molla/category-boxed.html  22 Nov 2019 10:03:00 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +39,7 @@
             <div class="header-top">
                 <div class="container">
                     <div class="header-left">
-                            
+
                         <div class="header-dropdown">
                             <a href="#">Eng</a>
                             <div class="header-menu">
@@ -54,7 +55,7 @@
                     <div class="header-right">
                         <ul class="top-menu">
                             <li>
-                                
+
                                 <ul>
                                     <li><a href="{{ url('login') }}">Login</a></li>
                                 </ul>
@@ -78,12 +79,12 @@
 
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
-                                <li >
+                                <li>
                                     <a href="{{ url('home') }}" class="nav-link {{ request()->is('tempatpkl') ? 'active' : '' }} ">Home</a>
 
                                 </li>
                                 <li class="megamenu-container active">
-                                    <a href="{{ url('shop') }} class="nav-link {{ request()->is('tempatpkl') ? 'active' : '' }} "">Product</a>
+                                    <a href="{{ url('shop') }} class=" nav-link {{ request()->is('tempatpkl') ? 'active' : '' }} "">Product</a>
 
                                 </li>
                                 <li>
@@ -104,11 +105,11 @@
                                 </div><!-- End .header-search-wrapper -->
                             </form>
                         </div><!-- End .header-search -->
-                        
+
                         <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" class="megamenu-container active" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                 <i class="icon-shopping-cart"></i>
-                                
+
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right">
@@ -152,147 +153,52 @@
         </header><!-- End .header -->
 
         <main class="main">
-        	
+
 
             <div class="page-content">
                 <div class="container">
-        			<div class="toolbox">
-        				
-        				<div class="toolbox-right">
-        					<div class="toolbox-sort">
-        						<label for="sortby">Sort by:</label>
-        						<div class="select-custom">
-									<select name="sortby" id="sortby" class="form-control">
-										<option value="popularity" selected="selected">Most Popular</option>
-										<option value="rating">Most Rated</option>
-										<option value="date">Date</option>
-									</select>
-								</div>
-        					</div><!-- End .toolbox-sort -->
-        				</div><!-- End .toolbox-right -->
-        			</div><!-- End .toolbox -->
+                    <div class="toolbox">
+
+                        <div class="toolbox-right">
+                            <div class="toolbox-sort">
+                                <label for="sortby">Sort by:</label>
+                                <div class="select-custom">
+                                    <select name="sortby" id="sortby" class="form-control">
+                                        <option value="popularity" selected="selected">Most Popular</option>
+                                        <option value="rating">Most Rated</option>
+                                        <option value="date">Date</option>
+                                    </select>
+                                </div>
+                            </div><!-- End .toolbox-sort -->
+                        </div><!-- End .toolbox-right -->
+                    </div><!-- End .toolbox -->
 
                     <div class="products">
                         <div class="row">
+                            @foreach ($list_produk as $produk)
                             <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class="product">
-                            <figure class="product-media">
-                                <span class="product-label label-new">New</span>
-                                <a href="{{ url('product') }}">
-                                    <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" alt="Product image" class="product-image">
-                                </a>
-
-                                
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <h3 class="product-title"><a href="{{ url('product') }}">Microsoft - Xbox Elite Wireless Controller</a></h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $149.99
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
-
-                            <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class="product">
-                            <figure class="product-media">
-                                <span class="product-label label-top">Top</span>
-                                <a href="{{ url('product') }}">
-                                    <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-13.jpg" alt="Product image" class="product-image">
-                                </a>
-
-                                
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <h3 class="product-title"><a href="{{ url('product') }}">Sony - PlayStation 4 1TB Console - Black</a></h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $299.99
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
-
-                            <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class="product">
-                            <figure class="product-media">
-                                <a href="{{ url('product') }}">
-                                    <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-14.jpg" alt="Product image" class="product-image">
-                                </a>
-
-                                
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <h3 class="product-title"><a href="{{ url('product') }}">Nintendo - Switch 32GB Console</a></h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $149.99
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
-
-                            <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class="product">
-                            <figure class="product-media">
-                                <span class="product-label label-top">Top</span>
-                                <a href="{{ url('product') }}">
-                                    <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-15.jpg" alt="Product image" class="product-image">
-                                </a>
-
-                               
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <h3 class="product-title"><a href="{{ url('product') }}">HyperX - Cloud Alpha Wired Stereo Gaming Headset</a></h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $99.99
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
-
-                            <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                            <div class="product">
-                            <figure class="product-media">
-                                <a href="{{ url('product') }}">
-                                    <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-16.jpg" alt="Product image" class="product-image">
-                                </a>
-
-                                
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                                </div><!-- End .product-action -->
-                            </figure><!-- End .product-media -->
-
-                            <div class="product-body">
-                                <h3 class="product-title"><a href="{{ url('product') }}">Logitech - G502 HERO Wired Optical Gaming Mouse Pack</a></h3><!-- End .product-title -->
-                                <div class="product-price">
-                                    $59.99
-                                </div><!-- End .product-price -->
-                            </div><!-- End .product-body -->
-                        </div><!-- End .product -->
-                            </div><!-- End .col-sm-6 col-lg-4 col-xl-3 -->
-
-                            
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <span class="product-label label-new">New</span>
+                                        <a href="{{ url('product', $produk->id) }}">
+                                            <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" alt="Product image" class="product-image">
+                                        </a>
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        </div><!-- End .product-action -->
+                                    </figure><!-- End .product-media -->
+                                    <div class="product-body">
+                                        <h3 class="product-title"><a href="{{ url('product', $produk->id) }}">{{ $produk->nama }}</a></h3>
+                                        <div class="product-price">
+                                            stok :{{ $produk->stok }}
+                                        </div>
+                                        <div class="product-price">
+                                            Rp.{{number_format($produk->harga) }}
+                                        </div>
+                                    </div>
+                                </div><!-- End .product -->
+                            </div>
+                            @endforeach
                         </div><!-- End .row -->
 
                         <div class="load-more-container text-center">
@@ -555,78 +461,78 @@
         </main><!-- End .main -->
 
         <footer class="footer">
-        	<div class="footer-middle">
-	            <div class="container">
-	            	<div class="row">
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget widget-about">
-	            				<img src="{{ url('public') }}/assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
-	            				<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget widget-about">
+                                <img src="{{ url('public') }}/assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
 
-	            				<div class="social-icons">
-	            					<a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
-	            				</div><!-- End .soial-icons -->
-	            			</div><!-- End .widget about-widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
+                                </div><!-- End .soial-icons -->
+                            </div><!-- End .widget about-widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
 
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget">
-	            				<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget">
+                                <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="about.html">About Molla</a></li>
-	            					<li><a href="#">How to shop on Molla</a></li>
-	            					<li><a href="#">FAQ</a></li>
-	            					<li><a href="contact.html">Contact us</a></li>
-	            					<li><a href="login.html">Log in</a></li>
-	            				</ul><!-- End .widget-list -->
-	            			</div><!-- End .widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
+                                <ul class="widget-list">
+                                    <li><a href="about.html">About Molla</a></li>
+                                    <li><a href="#">How to shop on Molla</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="login.html">Log in</a></li>
+                                </ul><!-- End .widget-list -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
 
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget">
-	            				<h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget">
+                                <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="#">Payment Methods</a></li>
-	            					<li><a href="#">Money-back guarantee!</a></li>
-	            					<li><a href="#">Returns</a></li>
-	            					<li><a href="#">Shipping</a></li>
-	            					<li><a href="#">Terms and conditions</a></li>
-	            					<li><a href="#">Privacy Policy</a></li>
-	            				</ul><!-- End .widget-list -->
-	            			</div><!-- End .widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
+                                <ul class="widget-list">
+                                    <li><a href="#">Payment Methods</a></li>
+                                    <li><a href="#">Money-back guarantee!</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Shipping</a></li>
+                                    <li><a href="#">Terms and conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul><!-- End .widget-list -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
 
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget">
-	            				<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget">
+                                <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="#">Sign In</a></li>
-	            					<li><a href="cart.html">View Cart</a></li>
-	            					<li><a href="#">My Wishlist</a></li>
-	            					<li><a href="#">Track My Order</a></li>
-	            					<li><a href="#">Help</a></li>
-	            				</ul><!-- End .widget-list -->
-	            			</div><!-- End .widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
-	            	</div><!-- End .row -->
-	            </div><!-- End .container -->
-	        </div><!-- End .footer-middle -->
+                                <ul class="widget-list">
+                                    <li><a href="#">Sign In</a></li>
+                                    <li><a href="cart.html">View Cart</a></li>
+                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a href="#">Track My Order</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul><!-- End .widget-list -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End .footer-middle -->
 
-	        <div class="footer-bottom">
-	        	<div class="container">
-	        		<p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
-	        		<figure class="footer-payments">
-	        			<img src="{{ url('public') }}/assets/images/payments.png" alt="Payment methods" width="272" height="20">
-	        		</figure><!-- End .footer-payments -->
-	        	</div><!-- End .container -->
-	        </div><!-- End .footer-bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+                    <figure class="footer-payments">
+                        <img src="{{ url('public') }}/assets/images/payments.png" alt="Payment methods" width="272" height="20">
+                    </figure><!-- End .footer-payments -->
+                </div><!-- End .container -->
+            </div><!-- End .footer-bottom -->
         </footer><!-- End .footer -->
     </div><!-- End .page-wrapper -->
     <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
@@ -643,7 +549,7 @@
                 <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..." required>
                 <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
             </form>
-            
+
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
@@ -651,12 +557,12 @@
                     </li>
                     <li>
                         <a href="category.html">Shop</a>
-                      
+
                     </li>
                     <li>
                         <a href="{{ url('product') }}">Product</a>
-                       
-                    
+
+
                 </ul>
             </nav><!-- End .mobile-nav -->
 
@@ -800,4 +706,5 @@
 
 
 <!-- molla/category-boxed.html  22 Nov 2019 10:03:02 GMT -->
+
 </html>
