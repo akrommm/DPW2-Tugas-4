@@ -3,6 +3,7 @@
 
 
 <!-- molla/{{ url('product') }}  22 Nov 2019 09:54:50 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +40,7 @@
                 <div class="container">
                     <div class="header-left">
                         <div class="header-dropdown">
-                            
+
                         </div><!-- End .header-dropdown -->
 
                         <div class="header-dropdown">
@@ -59,7 +60,7 @@
                             <li>
                                 <a href="#">Links</a>
                                 <ul>
-                                    
+
                                     <li><a href="{{ url('login') }}">Login</a></li>
                                 </ul>
                             </li>
@@ -108,47 +109,12 @@
                                 </div><!-- End .header-search-wrapper -->
                             </form>
                         </div><!-- End .header-search -->
-                        
+
                         <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" class="megamenu-container active" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                 <i class="icon-shopping-cart"></i>
-                                
+
                             </a>
-
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-cart-products">
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Microsoft - Xbox Elite Wireless Controller</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $149.99
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" alt="Product image" alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                    </div><!-- End .product -->
-                                </div><!-- End .cart-product -->
-
-                                <div class="dropdown-cart-total">
-                                    <span>Total</span>
-
-                                    <span class="cart-total-price">$149.99</span>
-                                </div><!-- End .dropdown-cart-total -->
-
-                                <div class="dropdown-cart-action">
-                                    <a href="{{ url('cart') }}" class="btn btn-primary">View Cart</a>
-                                    <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
-                                </div><!-- End .dropdown-cart-total -->
-                            </div><!-- End .dropdown-menu -->
                         </div><!-- End .cart-dropdown -->
                     </div><!-- End .header-right -->
                 </div><!-- End .container -->
@@ -189,7 +155,7 @@
                                         </figure><!-- End .product-main-image -->
 
                                         <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a  href="#" data-image="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" data-zoom-image="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg">
+                                            <a href="#" data-image="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" data-zoom-image="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg">
                                                 <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" alt="product side">
                                             </a>
 
@@ -200,31 +166,23 @@
 
                             <div class="col-md-6">
                                 <div class="product-details">
-                                    <h1 class="product-title">Microsoft - Xbox Elite Wireless Controller</h1><!-- End .product-title -->
-
-                                    <div class="ratings-container">
-                                        <div class="ratings">
-                                            <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                        </div><!-- End .ratings -->
-                                        <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
-                                    </div><!-- End .rating-container -->
-
+                                    <h1 class="product-title">{{ $produk->nama }}</h1><!-- End .product-title -->
                                     <div class="product-price">
-                                    $149.99
+                                        Rp.{{ number_format($produk->harga )}}
                                     </div><!-- End .product-price -->
 
                                     <div class="product-content">
-                                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
+                                        <p>{{ $produk->deskripsi }}</p>
                                     </div><!-- End .product-content -->
 
                                     <div class="details-filter-row details-row-size">
-                                        <label>Color:</label>
-                                        <label>Black</label>
+                                        <label>Stok:</label>
+                                        <label>{{ $produk->stok }}</label>
                                         <div class="product-nav product-nav-thumbs">
                                         </div><!-- End .product-nav -->
                                     </div><!-- End .details-filter-row -->
 
-                                    
+
                                     <div class="details-filter-row details-row-size">
                                         <label for="qty">Qty:</label>
                                         <div class="product-details-quantity">
@@ -250,15 +208,14 @@
                                             <a href="#" class="social-icon" title="Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
                                         </div>
                                     </div><!-- End .product-details-footer -->
-                                </div><!-- End .product-details -->
-                            </div><!-- End .col-md-6 -->
+                                </div>
+                            </div>
                         </div><!-- End .row -->
                     </div><!-- End .product-details-top -->
 
                     <h2 class="title text-center mb-4">You May Also Like</h2><!-- End .title text-center -->
 
-                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" 
-                        data-owl-options='{
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl" data-owl-options='{
                             "nav": false, 
                             "dots": true,
                             "margin": 20,
@@ -310,7 +267,7 @@
                                     <span class="ratings-text">( 2 Reviews )</span>
                                 </div><!-- End .rating-container -->
 
-                                
+
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
 
@@ -370,7 +327,7 @@
                                     <span class="ratings-text">( 1 Reviews )</span>
                                 </div><!-- End .rating-container -->
 
-                                
+
                             </div><!-- End .product-body -->
                         </div><!-- End .product -->
 
@@ -441,78 +398,78 @@
         </main><!-- End .main -->
 
         <footer class="footer">
-        	<div class="footer-middle">
-	            <div class="container">
-	            	<div class="row">
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget widget-about">
-	            				<img src="{{ url('public') }}/assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
-	            				<p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget widget-about">
+                                <img src="{{ url('public') }}/assets/images/logo.png" class="footer-logo" alt="Footer Logo" width="105" height="25">
+                                <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
 
-	            				<div class="social-icons">
-	            					<a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
-	            					<a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
-	            				</div><!-- End .soial-icons -->
-	            			</div><!-- End .widget about-widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon" target="_blank" title="Facebook"><i class="icon-facebook-f"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Instagram"><i class="icon-instagram"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
+                                    <a href="#" class="social-icon" target="_blank" title="Pinterest"><i class="icon-pinterest"></i></a>
+                                </div><!-- End .soial-icons -->
+                            </div><!-- End .widget about-widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
 
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget">
-	            				<h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget">
+                                <h4 class="widget-title">Useful Links</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="about.html">About Molla</a></li>
-	            					<li><a href="#">How to shop on Molla</a></li>
-	            					<li><a href="#">FAQ</a></li>
-	            					<li><a href="contact.html">Contact us</a></li>
-	            					<li><a href="login.html">Log in</a></li>
-	            				</ul><!-- End .widget-list -->
-	            			</div><!-- End .widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
+                                <ul class="widget-list">
+                                    <li><a href="about.html">About Molla</a></li>
+                                    <li><a href="#">How to shop on Molla</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="login.html">Log in</a></li>
+                                </ul><!-- End .widget-list -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
 
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget">
-	            				<h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget">
+                                <h4 class="widget-title">Customer Service</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="#">Payment Methods</a></li>
-	            					<li><a href="#">Money-back guarantee!</a></li>
-	            					<li><a href="#">Returns</a></li>
-	            					<li><a href="#">Shipping</a></li>
-	            					<li><a href="#">Terms and conditions</a></li>
-	            					<li><a href="#">Privacy Policy</a></li>
-	            				</ul><!-- End .widget-list -->
-	            			</div><!-- End .widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
+                                <ul class="widget-list">
+                                    <li><a href="#">Payment Methods</a></li>
+                                    <li><a href="#">Money-back guarantee!</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Shipping</a></li>
+                                    <li><a href="#">Terms and conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul><!-- End .widget-list -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
 
-	            		<div class="col-sm-6 col-lg-3">
-	            			<div class="widget">
-	            				<h4 class="widget-title">My Account</h4><!-- End .widget-title -->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="widget">
+                                <h4 class="widget-title">My Account</h4><!-- End .widget-title -->
 
-	            				<ul class="widget-list">
-	            					<li><a href="#">Sign In</a></li>
-	            					<li><a href="cart.html">View Cart</a></li>
-	            					<li><a href="#">My Wishlist</a></li>
-	            					<li><a href="#">Track My Order</a></li>
-	            					<li><a href="#">Help</a></li>
-	            				</ul><!-- End .widget-list -->
-	            			</div><!-- End .widget -->
-	            		</div><!-- End .col-sm-6 col-lg-3 -->
-	            	</div><!-- End .row -->
-	            </div><!-- End .container -->
-	        </div><!-- End .footer-middle -->
+                                <ul class="widget-list">
+                                    <li><a href="#">Sign In</a></li>
+                                    <li><a href="cart.html">View Cart</a></li>
+                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a href="#">Track My Order</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul><!-- End .widget-list -->
+                            </div><!-- End .widget -->
+                        </div><!-- End .col-sm-6 col-lg-3 -->
+                    </div><!-- End .row -->
+                </div><!-- End .container -->
+            </div><!-- End .footer-middle -->
 
-	        <div class="footer-bottom">
-	        	<div class="container">
-	        		<p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
-	        		<figure class="footer-payments">
-	        			<img src="{{ url('public') }}/assets/images/payments.png" alt="Payment methods" width="272" height="20">
-	        		</figure><!-- End .footer-payments -->
-	        	</div><!-- End .container -->
-	        </div><!-- End .footer-bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="footer-copyright">Copyright © 2019 Molla Store. All Rights Reserved.</p><!-- End .footer-copyright -->
+                    <figure class="footer-payments">
+                        <img src="{{ url('public') }}/assets/images/payments.png" alt="Payment methods" width="272" height="20">
+                    </figure><!-- End .footer-payments -->
+                </div><!-- End .container -->
+            </div><!-- End .footer-bottom -->
         </footer><!-- End .footer -->
     </div><!-- End .page-wrapper -->
     <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
@@ -527,12 +484,12 @@
                             <img src="{{ url('public') }}/assets/images/demos/demo-19/products/product-12.jpg" alt="Product image">
                         </a>
                     </figure><!-- End .product-media -->
-                    <h4 class="product-title"><a href="{{ url('product') }}">Microsoft - Xbox Elite Wireless Controller</a></h4><!-- End .product-title -->
+                    <h4 class="product-title"><a href="{{ url('product') }}">{{ $produk->nama }}</a></h4><!-- End .product-title -->
                 </div><!-- End .col-6 -->
 
                 <div class="col-6 justify-content-end">
                     <div class="product-price">
-                        $149.99
+                        Rp.{{ number_format($produk->harga )}}
                     </div><!-- End .product-price -->
                     <div class="product-details-quantity">
                         <input type="number" id="sticky-cart-qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
@@ -540,7 +497,7 @@
 
                     <div class="product-details-action">
                         <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
-                        
+
                     </div><!-- End .product-details-action -->
                 </div><!-- End .col-6 -->
             </div><!-- End .row -->
@@ -559,7 +516,7 @@
                 <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..." required>
                 <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
             </form>
-            
+
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
@@ -850,4 +807,5 @@
 
 
 <!-- molla/{{ url('product') }}  22 Nov 2019 09:55:05 GMT -->
+
 </html>
